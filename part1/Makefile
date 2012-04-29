@@ -1,16 +1,14 @@
 # Use Lemon instead of Bison/YACC
 YACC=lemon
 
-all: shell
-
 shell: main.o shellparser.o
 	$(CXX) main.o shellparser.o -o shell
 
-main.o:	main.cpp shellparser.hpp
+main.o: main.cpp shellparser.hpp
 
-shellparser.cpp:	lemonfiles
+shellparser.cpp: lemonfiles
 
-shellparser.hpp:	lemonfiles
+shellparser.hpp: lemonfiles
 
 .PHONY: lemonfiles
 lemonfiles: shellparser.y
