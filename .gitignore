@@ -1,0 +1,8 @@
+# Shell binary
+shell
+# Lemon auto-generated files
+shellparser.cpp
+shellparser.h
+shellparser.out
+# Object files
+*.o
