@@ -11,11 +11,11 @@ int main()
 {
   void* shellParser = ParseAlloc(malloc);
   // Simulate a command line such as "cat main.cpp | wc"
-  Parse(shellParser, PROGRAM, "cat");
-  Parse(shellParser, ARGUMENT, "main.cpp");
+  Parse(shellParser, FILENAME, "cat");
+  Parse(shellParser, FILENAME, "main.cpp");
   Parse(shellParser, PIPE, 0);
-  Parse(shellParser, PIPE, 0);
-  Parse(shellParser, PROGRAM, "wc");
+  Parse(shellParser, FILENAME, "wc");
+  Parse(shellParser, 0, 0);
   ParseFree(shellParser, free);
   return 0;
 }
