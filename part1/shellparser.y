@@ -19,17 +19,23 @@ commandList ::= command .
 {
 }
 
-command ::= PROGRAM argumentList .
+command ::= FILENAME argumentList .
 {
 }
-command ::= PROGRAM .
-{
-}
-
-argumentList ::= ARGUMENT argumentList .
-{
-}
-argumentList ::= ARGUMENT .
+command ::= FILENAME .
 {
 }
 
+argumentList ::= argument argumentList .
+{
+}
+argumentList ::= argument .
+{
+}
+
+argument ::= ARGUMENT .
+{
+}
+argument ::= FILENAME .
+{
+}
