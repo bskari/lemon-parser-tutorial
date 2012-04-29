@@ -1,4 +1,4 @@
 lemon-parser-tutorial
 =====================
 
-Create a simple sgell using the Lemon and Flex
+Create a simple shell using Lemon and Flex.
