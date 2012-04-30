@@ -1,6 +1,3 @@
-# Use Lemon instead of Bison/YACC
-YACC=lemon
-
 shell: main.o shellparser.o
 	$(CXX) main.o shellparser.o -o shell
 
