@@ -11,3 +11,11 @@ shellparser.hpp: lemonfiles
 lemonfiles: shellparser.y
 	lemon shellparser.y -s
 	mv shellparser.c shellparser.cpp
+
+.PHONY: clean
+clean:
+	rm -f *.o
+	rm -f shellparser.cpp
+	rm -f shellparser.h
+	rm -f shell
+	rm -f shellparser.out
