@@ -6,8 +6,8 @@
 using namespace std;
  
 void* ParseAlloc(void* (*allocProc)(size_t));
-void* Parse(void*, int, const char*);
-void* ParseFree(void*, void(*freeProc)(void*));
+void Parse(void*, int, const char*);
+void ParseFree(void*, void(*freeProc)(void*));
  
 void parse(const string& commandLine) {
     // Set up the scanner
