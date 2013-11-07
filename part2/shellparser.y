@@ -6,10 +6,11 @@
 
 %syntax_error
 {
-  std::cerr << "Error parsing command\n";
+  *valid = false;
 }
 
 %token_type {const char*}
+%extra_argument {bool* valid}
 
 start ::= commandList .
 commandList ::= command PIPE commandList .

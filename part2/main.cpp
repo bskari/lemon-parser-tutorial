@@ -6,8 +6,8 @@
 using namespace std;
  
 void* ParseAlloc(void* (*allocProc)(size_t));
-void Parse(void*, int, const char*);
-void ParseFree(void*, void(*freeProc)(void*));
+void Parse(void* parser, int token, const char* tokenInfo, bool* valid);
+void ParseFree(void* parser, void(*freeProc)(void*));
  
 void parse(const string& commandLine) {
     // Set up the scanner
@@ -19,14 +19,19 @@ void parse(const string& commandLine) {
     void* shellParser = ParseAlloc(malloc);
  
     int lexCode;
+    bool validParse = true;
     do {
         lexCode = yylex(scanner);
-        Parse(shellParser, lexCode, NULL);
+        Parse(shellParser, lexCode, NULL, &validParse);
     }
-    while (lexCode > 0);
+    while (lexCode > 0 && validParse);
  
     if (-1 == lexCode) {
         cerr << "The scanner encountered an error.\n";
+    }
+
+    if (!validParse) {
+        cerr << "The parser encountered an error.\n";
     }
  
     // Cleanup the scanner and parser

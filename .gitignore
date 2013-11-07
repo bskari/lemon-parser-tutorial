@@ -11,3 +11,6 @@ shellscanner.yy.cpp
 shellscanner.yy.hpp
 # Object files
 *.o
+# Junk
+*.swp
+*~
