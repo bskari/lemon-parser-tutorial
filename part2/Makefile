@@ -1,5 +1,10 @@
+CXXFLAGS = -Wall -Wextra -Weffc++ -Wfloat-equal -Wshadow\
+	-Wpointer-arith -Wcast-align -Wstrict-overflow=5\
+	-Wwrite-strings -Wswitch-default -Wswitch-enum -Wparentheses\
+	-Woverloaded-virtual -pedantic
+
 shell: main.o shellparser.o shellscanner.yy.o
-	$(CXX) main.o shellparser.o shellscanner.yy.o -o shell
+	$(CXX) $(CXXFLAGS) main.o shellparser.o shellscanner.yy.o -o shell
  
 main.o: main.cpp shellscanner.yy.hpp shellparser.hpp
  
