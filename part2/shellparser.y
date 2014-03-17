@@ -20,10 +20,13 @@ commandList ::= command .
 {
 }
 
-command ::= FILENAME argumentList .
+command ::= ARGUMENT argumentList .
 {
 }
-command ::= FILENAME .
+command ::= ARGUMENT .
+{
+}
+command ::= COMMAND_SUBSTITUTION_START commandList COMMAND_SUBSTITUTION_END .
 {
 }
 
@@ -37,6 +40,6 @@ argumentList ::= argument .
 argument ::= ARGUMENT .
 {
 }
-argument ::= FILENAME .
+argument ::= COMMAND_SUBSTITUTION_START commandList COMMAND_SUBSTITUTION_END .
 {
 }
