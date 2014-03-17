@@ -16,7 +16,7 @@
  
 [ \t\r\n]    {}
  
-[a-zA-Z0-9\-\._/]+  {return ARGUMENT;}
+[a-zA-Z0-9\-\._/]+  {return FILENAME;}
  
 [']                     {BEGIN(SINGLE_QUOTED);}
 <SINGLE_QUOTED>[^']+    {}
